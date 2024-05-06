@@ -39,6 +39,6 @@ stages:
           azureSubscription: 'Pay-As-You-Go (c0ba8b80-3f63-46bf-9763-7df38cae14c8)'
           appType: 'webAppLinux'
           WebAppName: 'youtube-app-clone'
-          packageForLinux: '$(System.DefaultWorkingDirectory)/build'
+          packageForLinux: '$(System.ArtifactsDirectory)/build'
           RuntimeStack: 'STATICSITE|1.0'
 
