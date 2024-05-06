@@ -1,0 +1,30 @@
+pool:
+  name: Azure Pipelines
+  demands: npm
+
+steps:
+- task: Npm@1
+  displayName: 'npm install'
+  inputs:
+    verbose: false
+
+- task: Npm@1
+  displayName: 'npm build'
+  inputs:
+    command: custom
+    verbose: false
+    customCommand: 'run build'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: drop'
+  inputs:
+    PathtoPublish: build
+
+- task: AzureRmWebAppDeployment@4
+  displayName: 'Azure App Service Deploy: youtube-app-clone'
+  inputs:
+    azureSubscription: 'Pay-As-You-Go (c0ba8b80-3f63-46bf-9763-7df38cae14c8)'
+    appType: webAppLinux
+    WebAppName: 'youtube-app-clone'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/build'
+    RuntimeStack: 'STATICSITE|1.0'
