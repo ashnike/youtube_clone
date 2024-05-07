@@ -11,7 +11,7 @@
   - Azure DevOps will prompt you to choose the repository where your source code is stored. Select the appropriate repository.
 3. **Configure the Pipeline:**
   - Azure DevOps provides several pipeline templates to get you started quickly. You can choose the option that says Existing Azure Pipelines YAML file.
-    ![Alt text](https://github.com/ashnike/youtube_clone/blob/main/scripts/pup1.png)
+      ![Alt text](https://github.com/ashnike/youtube_clone/blob/main/scripts/pup1.png)
 4. **Select Your YAML File:**
   - Choose the option to "Select an existing YAML file."
   - Browse the repository to locate the YAML file you want to use for your pipeline.
